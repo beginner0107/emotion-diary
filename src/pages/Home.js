@@ -25,7 +25,7 @@ const Home = () => {
     ).getTime();
 
     setData(
-      diaryList[0].filter((it) => firstDay <= it.date && it.date <= lastDay)
+      diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay)
     );
   }, [diaryList, curDate]);
 
