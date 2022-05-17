@@ -20,7 +20,7 @@ const ControlMenu = ({ value, onChange, optionList }) => {
 };
 
 const sortOptionList = [
-  { value: "lastest", name: "최신순" },
+  { value: "latest", name: "최신순" },
   { value: "oldest", name: "오래된 순" },
 ];
 
@@ -32,7 +32,7 @@ const filterOptionList = [
 
 const DiaryList = ({ diaryList }) => {
   const navigate = useNavigate();
-  const [sortType, setSortType] = useState("lastest");
+  const [sortType, setSortType] = useState("latest");
   const [filter, setFilter] = useState("all");
 
   const getProcessedDiaryList = () => {
@@ -45,7 +45,7 @@ const DiaryList = ({ diaryList }) => {
     };
 
     const compare = (a, b) => {
-      if (sortType === "lastest") {
+      if (sortType === "latest") {
         return parseInt(b.date) - parseInt(a.date);
       } else {
         return parseInt(a.date) - parseInt(b.date);
@@ -59,10 +59,6 @@ const DiaryList = ({ diaryList }) => {
     const sortedList = filteredList.sort(compare);
     return sortedList;
   };
-
-  diaryList = getProcessedDiaryList().map((it) => {
-    return <DiaryItem key={it.id} {...it} />;
-  });
 
   return (
     <div className="DiaryList">
@@ -87,7 +83,9 @@ const DiaryList = ({ diaryList }) => {
           />
         </div>
       </div>
-      {diaryList}
+      {getProcessedDiaryList().map((it) => {
+        return <DiaryItem key={it.id} {...it} />;
+      })}
     </div>
   );
 };
