@@ -58,9 +58,9 @@ https://ahn-inflearn-project.web.app/
 - React Lifecycle(생애주기)을 제어할 수 있는 useEffect
 ![image](https://user-images.githubusercontent.com/81161819/169510712-06199c42-d08d-48e9-83c7-b57d59fed0d0.png)
 
-☆ Mount : 화면에 나타나는 것 : 초기화 작업<br>
-☆ Update : 업데이트(리렌더) : 예외 처리 작업<br>
-☆ unMount : 화면에서 사라지는 것 : 메모리 정리 작업<br>
+* Mount : 화면에 나타나는 것 : 초기화 작업<br>
+* Update : 업데이트(리렌더) : 예외 처리 작업<br>
+* unMount : 화면에서 사라지는 것 : 메모리 정리 작업<br>
 
 - 연산결과를 재사용하는 useMemo : 불필요하게 재 랜더링 되는 부분을 해결(Memorization)
 - React.memo : 고착 컴포넌트(컴포넌트 재사용)
